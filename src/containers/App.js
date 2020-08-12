@@ -7,10 +7,7 @@ class App extends React.Component {
 
   state={
     keymappings: {
-      a: {
-      note: "C4",
-      id: 'Csh'
-      },
+      a: "C4",
       w: "C#4",
       s: "D4",
       e: "D#4",
