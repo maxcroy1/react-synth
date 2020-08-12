@@ -9,7 +9,7 @@ componentDidMount() {
     function playKey(event) {
       let key = event.key
       if (self.props.keymappings[key]) {
-        synth.triggerAttackRelease(`${self.props.keymappings[key]}`)
+        synth.triggerAttackRelease(`${self.props.keymappings[key].note}`)
       }
     }
 

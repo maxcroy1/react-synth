@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#C1:active, #D1:active, #E1:active, #F1:active, #G1:active, #A1:active, #B1:active, #C2:active, #D2:active, #E2:active, #F2:active{
+	fill: tomato;
+}
+
+
+#Csh:active, #Dsh:active, #Fsh:active, #Gsh:active, #Ash:active, #Csh2:active, #Dsh2:active{
+	fill: skyblue;
+}

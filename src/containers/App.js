@@ -1,12 +1,16 @@
 import React from 'react';
 import SynthA from '../components/SynthA'
 import LoginForm from '../components/LoginForm'
+import Keyboard from '../components/Keyboard'
 
 class App extends React.Component {
 
   state={
     keymappings: {
-      a: "C4",
+      a: {
+      note: "C4",
+      id: 'Csh'
+      },
       w: "C#4",
       s: "D4",
       e: "D#4",
@@ -46,10 +50,35 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.userLogin()
+    if(e.target.value === "Register"){
+      this.userRegister()
+    }else if(e.target.value === "Login"){
+      this.userLogin()
+    }
   }
 
-  userLogin() {
+  userLogin = () => {
+    let formData = {
+      user:{
+        username: this.state.username,
+        password: this.state.password
+      }
+    }
+    let configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(formData)
+    }
+    fetch("http://localhost:3000/api/v1/login", configObj)
+      .then(resp => resp.json())
+      .then(json => console.log(json))
+      .catch(error => console.log(error))
+  }
+
+  userRegister() {
     let formData = {
       user:{
         username: this.state.username,
@@ -76,6 +105,7 @@ class App extends React.Component {
         <button onClick={this.handleLogin}>Login/Register</button>
         {this.state.loginDropDown ? <LoginForm changeHandler={this.handleChange} submitHandler={this.handleSubmit}/> : null}
         <SynthA keymappings={this.state.keymappings}/>
+        <Keyboard />
       </div>
     );
   }
