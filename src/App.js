@@ -23,7 +23,7 @@ class App extends React.Component {
       p: "D#5",
       ":": "E5",
       "'": "F5"
-    },
+    }
   }
 
   componentDidMount() {
@@ -36,7 +36,15 @@ class App extends React.Component {
       }
     }
 
+    function endKey(event) {
+      let key = event.key
+      if (self.state.keymappings[key]) {
+        synth.triggerRelease()
+      }
+    }
+
     document.addEventListener('keydown', playKey)
+    document.addEventListener('keyup', endKey)
   }
 
   render() {
