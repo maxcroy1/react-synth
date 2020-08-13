@@ -1,12 +1,11 @@
 import React from 'react'
-import {ReactComponent as KeyboardImage} from '../keys.svg'
+import Key from './Key'
 
 class Keyboard extends React.Component{
 	render(){
 		return(
 			<div> 
-				<h3> Keyboard </h3>
-				<KeyboardImage />
+				<Key />
 			</div>
 		)
 	}

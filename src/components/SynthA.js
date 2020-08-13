@@ -1,11 +1,8 @@
 import React from 'react';
 import { AMSynth } from 'tone';
+import Keyboard from './Keyboard'
 
 export default class SynthA extends React.Component {
-
-state = {
-  note: "C4"
-}
 
 componentDidMount() {
     const synth = new AMSynth().toDestination();
@@ -13,28 +10,29 @@ componentDidMount() {
     function playKey(event) {
       let key = event.key
       if (self.props.keymappings[key]) {
-        synth.triggerAttackRelease(`${self.props.keymappings[key]}`)
-        self.setState({note: self.props.keymappings[key]}, ()=>{
-          console.log(self.state)
-        })
-      }
+        let note = (self.props.keymappings[key]).replace('sh', '#')
+        synth.triggerAttackRelease(`${note}`)
+        self.setState({note: self.props.keymappings[key]})
         let svg = document.getElementById(`${self.state.note}`)
-        svg.setAttribute("fill", "red")
-        console.log(svg) 
+        if ((svg.id).includes('sh')) {
+          svg.setAttribute("fill", "skyblue")
+        } else {
+          svg.setAttribute("fill", "tomato")
+        }
+      }
     }
 
-
-
     // if clicked is true -- add a className with a # before note
-
     function endKey(event) {
       let key = event.key
-      let svg = document.getElementById(`${self.state.note}`)
-      svg.setAttribute("fill", "white")
-
-      self.setState(prevState => {return {click: !prevState.click}})
       if (self.props.keymappings[key]) {
         synth.triggerRelease()
+        let svg = document.getElementById(`${self.state.note}`)
+        if ((svg.id).includes('sh')) {
+          svg.setAttribute("fill", "black")
+        } else {
+          svg.setAttribute("fill", "white")
+        }
       }
     }
 
@@ -44,7 +42,9 @@ componentDidMount() {
 
   render() {
       return (
-          <div></div>
+          <div>
+            <Keyboard />
+          </div>
       )
   }
 }

@@ -1,28 +1,27 @@
 import React from 'react';
 import SynthA from '../components/SynthA'
 import LoginForm from '../components/LoginForm'
-import Keyboard from '../components/Keyboard'
 
 class App extends React.Component {
 
   state={
     keymappings: {
       a: "C4",
-      w: "C#4",
+      w: "Csh4",
       s: "D4",
-      e: "D#4",
+      e: "Dsh4",
       d: "E4",
       f: "F4",
-      t: "F#4",
+      t: "Fsh4",
       g: "G4",
-      y: "G#4",
+      y: "Gsh4",
       h: "A4",
-      u: "A#4", 
+      u: "Ash4", 
       j: "B4",
       k: "C5",
-      o: "C#5",
+      o: "Csh5",
       l: "D5",
-      p: "D#5",
+      p: "Dsh5",
       ":": "E5",
       "'": "F5"
     },
@@ -101,8 +100,7 @@ class App extends React.Component {
       <div className="App">
         <button onClick={this.handleLogin}>Login/Register</button>
         {this.state.loginDropDown ? <LoginForm changeHandler={this.handleChange} submitHandler={this.handleSubmit}/> : null}
-        <SynthA keymappings={this.state.keymappings}/>
-        <Keyboard />
+        <SynthA keymappings={this.state.keymappings} style={{margin: "auto"}}/>
       </div>
     );
   }
