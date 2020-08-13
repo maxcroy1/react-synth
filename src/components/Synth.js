@@ -26,21 +26,29 @@ export default class SynthA extends React.Component {
       ":": "E5",
       "'": "F5"
     },
-    reverb: false,
+    reverb: {
+      wet: 0,
+      decay: 0.1
+    },
     gain: 50
 }
 
-handleReverb = () => {
-    this.setState(previousState => {
-        return {
-            reverb: !previousState.reverb
-        }
-    })
-    if (this.state.reverb){
-
-    } else {
-        
+wetSlider = (e) => {
+  this.setState({
+    reverb: {
+      ...this.state.reverb,
+      wet: parseFloat(e.target.value)
     }
+  })
+}
+
+decaySlider = (e) => {
+  this.setState({
+    reverb: {
+      ...this.state.reverb,
+      decay: parseFloat(e.target.value)
+    }
+  })
 }
 
 gainSlider = (e) => {
@@ -54,8 +62,8 @@ componentDidMount() {
       let key = event.key
       if (self.state.keymappings[key]) {
         let note = (self.state.keymappings[key]).replace('sh', '#')
-        const distortion = new Distortion(0.9)
-        const synth = self.props.synth.chain(distortion)
+        const reverb = new Reverb({"wet": self.state.reverb.wet, "decay": self.state.reverb.decay})
+        const synth = self.props.synth.chain(reverb, Destination)
         synth.triggerAttackRelease(`${note}`)
         self.setState({note: self.state.keymappings[key]})
         let svg = document.getElementById(`${self.state.note}`)
@@ -87,7 +95,7 @@ componentDidMount() {
   render() {
       return (
           <div>
-            <Effects handleReverb={this.handleReverb} gainSlider={this.gainSlider} gain={this.state.gain}/>
+            <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} decaySlider={this.decaySlider}/>
             <Keyboard />
           </div>
       )
