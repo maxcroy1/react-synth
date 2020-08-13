@@ -1,5 +1,5 @@
 import React from 'react';
-import {Reverb, Gain, Distortion, Destination} from 'tone';
+import {Reverb, Gain, Destination} from 'tone';
 import Keyboard from './Keyboard'
 import Effects from '../containers/Effects'
 
@@ -61,21 +61,26 @@ componentDidMount() {
     
 
     function playKey(event) {
-      let key = event.key
-      if (self.state.keymappings[key]) {
-        let note = (self.state.keymappings[key]).replace('sh', '#')
-        const synth = self.props.synth
-        synth.disconnect()
-        const reverb = new Reverb({"wet": self.state.reverb.wet, "decay": self.state.reverb.decay})
-        const gain = new Gain({"gain": self.state.gain})
-        synth.chain(reverb, gain, Destination)
-        synth.triggerAttackRelease(`${note}`)
-        self.setState({note: self.state.keymappings[key]})
-        let svg = document.getElementById(`${self.state.note}`)
-        if ((svg.id).includes('sh')) {
-          svg.setAttribute("fill", "skyblue")
-        } else {
-          svg.setAttribute("fill", "tomato")
+      if (event.repeat) {
+        return null
+      } else {
+        let key = event.key
+        console.log(key)
+        if (self.state.keymappings[key]) {
+          let note = (self.state.keymappings[key]).replace('sh', '#')
+          const synth = self.props.synth
+          synth.disconnect()
+          const reverb = new Reverb({"wet": self.state.reverb.wet, "decay": self.state.reverb.decay})
+          const gain = new Gain({"gain": self.state.gain})
+          synth.chain(reverb, gain, Destination)
+          synth.triggerAttackRelease(`${note}`)
+          self.setState({note: self.state.keymappings[key]})
+          let svg = document.getElementById(`${self.state.note}`)
+          if ((svg.id).includes('sh')) {
+            svg.setAttribute("fill", "skyblue")
+          } else {
+            svg.setAttribute("fill", "tomato")
+          }
         }
       }
     }
