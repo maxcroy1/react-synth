@@ -1,8 +1,31 @@
 import React from 'react';
-import { AMSynth } from 'tone';
+import { AMSynth, Reverb } from 'tone';
 import Keyboard from './Keyboard'
+import Effects from '../containers/Effects'
 
 export default class SynthA extends React.Component {
+
+  state={
+    reverb: false,
+    gain: 50
+}
+
+handleReverb = () => {
+    this.setState(previousState => {
+        return {
+            reverb: !previousState.reverb
+        }
+    })
+    if (this.state.reverb){
+
+    } else {
+        
+    }
+}
+
+gainSlider = (e) => {
+    this.setState({gain: e.target.value})
+}
 
 componentDidMount() {
     const synth = new AMSynth().toDestination();
@@ -43,6 +66,7 @@ componentDidMount() {
   render() {
       return (
           <div>
+            <Effects handleReverb={this.handleReverb} gainSlider={this.gainSlider} gain={this.state.gain}/>
             <Keyboard />
           </div>
       )
