@@ -1,33 +1,15 @@
 import React from 'react';
-import SynthA from '../components/SynthA'
+import Synth from '../components/Synth'
 import LoginForm from '../components/LoginForm'
+import {AMSynth, DuoSynth, FMSynth} from 'tone'
 
 class App extends React.Component {
 
   state={
-    keymappings: {
-      a: "C4",
-      w: "Csh4",
-      s: "D4",
-      e: "Dsh4",
-      d: "E4",
-      f: "F4",
-      t: "Fsh4",
-      g: "G4",
-      y: "Gsh4",
-      h: "A4",
-      u: "Ash4", 
-      j: "B4",
-      k: "C5",
-      o: "Csh5",
-      l: "D5",
-      p: "Dsh5",
-      ":": "E5",
-      "'": "F5"
-    },
     loginDropDown: false, 
     username: "",
-    password: ""
+    password: "", 
+    synth: new AMSynth().toDestination()
   }
 
   handleLogin = () => {
@@ -95,12 +77,26 @@ class App extends React.Component {
       .catch(error => console.log(error))
   }
 
+  synthSelect = (e) => {
+    this.state.synth.disconnect()
+    if (e.target.id === "A") {
+      this.setState({synth: new AMSynth()})
+    } else if (e.target.id === "B") {
+      this.setState({synth: new DuoSynth()})
+    } else if (e.target.id === "C") {
+      this.setState({synth: new FMSynth()})
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <button onClick={this.handleLogin}>Login/Register</button>
         {this.state.loginDropDown ? <LoginForm changeHandler={this.handleChange} submitHandler={this.handleSubmit}/> : null}
-        <SynthA keymappings={this.state.keymappings} style={{margin: "auto"}}/>
+        <button id="A" onClick={this.synthSelect}>Synth A</button>
+        <button id="B" onClick={this.synthSelect}>Synth B</button>
+        <button id="C" onClick={this.synthSelect}>Synth C</button>
+        <Synth style={{margin: "auto"}} synth={this.state.synth}/>
       </div>
     );
   }
