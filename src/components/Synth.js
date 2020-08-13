@@ -3,7 +3,7 @@ import {Reverb, Gain, Distortion, Destination} from 'tone';
 import Keyboard from './Keyboard'
 import Effects from '../containers/Effects'
 
-export default class SynthA extends React.Component {
+export default class Synth extends React.Component {
 
   state={
     keymappings: {
@@ -58,12 +58,16 @@ gainSlider = (e) => {
 componentDidMount() {
     const self = this;
 
+    
+
     function playKey(event) {
       let key = event.key
       if (self.state.keymappings[key]) {
         let note = (self.state.keymappings[key]).replace('sh', '#')
+        const synth = self.props.synth
+        synth.disconnect()
         const reverb = new Reverb({"wet": self.state.reverb.wet, "decay": self.state.reverb.decay})
-        const synth = self.props.synth.chain(reverb, Destination)
+        synth.chain(reverb, Destination)
         synth.triggerAttackRelease(`${note}`)
         self.setState({note: self.state.keymappings[key]})
         let svg = document.getElementById(`${self.state.note}`)
