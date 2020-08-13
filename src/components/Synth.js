@@ -30,7 +30,7 @@ export default class Synth extends React.Component {
       wet: 0,
       decay: 0.1
     },
-    gain: 50
+    gain: 0
 }
 
 wetSlider = (e) => {
@@ -52,7 +52,7 @@ decaySlider = (e) => {
 }
 
 gainSlider = (e) => {
-    this.setState({gain: e.target.value})
+    this.setState({gain: parseFloat(e.target.value)})
 }
 
 componentDidMount() {
@@ -67,7 +67,8 @@ componentDidMount() {
         const synth = self.props.synth
         synth.disconnect()
         const reverb = new Reverb({"wet": self.state.reverb.wet, "decay": self.state.reverb.decay})
-        synth.chain(reverb, Destination)
+        const gain = new Gain({"gain": self.state.gain})
+        synth.chain(reverb, gain, Destination)
         synth.triggerAttackRelease(`${note}`)
         self.setState({note: self.state.keymappings[key]})
         let svg = document.getElementById(`${self.state.note}`)

@@ -14,7 +14,7 @@ export default class Effects extends React.Component{
                     <input type="range" min="0.1" max="10" step="0.1" value={this.props.reverb.decay} class="slider" id="reverbDecay" onChange={this.props.decaySlider}></input>
                 </div>
                 <label>Gain</label>
-                <input type="range" min="1" max="100" value={this.props.gain} class="slider" id="Gain" onChange={this.props.gainSlider}></input>
+                <input type="range" min="0" max="1" step="0.1" value={this.props.gain} class="slider" id="Gain" onChange={this.props.gainSlider}></input>
             </div>
         )
     }
