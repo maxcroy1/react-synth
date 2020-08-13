@@ -65,7 +65,6 @@ componentDidMount() {
         return null
       } else {
         let key = event.key
-        console.log(key)
         if (self.state.keymappings[key]) {
           let note = (self.state.keymappings[key]).replace('sh', '#')
           const synth = self.props.synth
@@ -105,7 +104,7 @@ componentDidMount() {
   render() {
       return (
           <div>
-            <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} decaySlider={this.decaySlider}/>
+            <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} decaySlider={this.decaySlider} user={this.props.user}/>
             <Keyboard />
           </div>
       )

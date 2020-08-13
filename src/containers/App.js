@@ -9,7 +9,8 @@ class App extends React.Component {
     loginDropDown: false, 
     username: "",
     password: "", 
-    synth: new AMSynth().toDestination()
+    synth: new AMSynth().toDestination(), 
+    user: ""
   }
 
   handleLogin = () => {
@@ -52,7 +53,7 @@ class App extends React.Component {
     }
     fetch("http://localhost:3000/api/v1/login", configObj)
       .then(resp => resp.json())
-      .then(json => console.log(json))
+      .then(json => this.setState({user: json.user.id}))
       .catch(error => console.log(error))
   }
 
@@ -73,7 +74,7 @@ class App extends React.Component {
     }
     fetch("http://localhost:3000/api/v1/users", configObj)
       .then(resp => resp.json())
-      .then(json => console.log(json))
+      .then(json => this.setState({user: json.user.id}))
       .catch(error => console.log(error))
   }
 
@@ -96,7 +97,7 @@ class App extends React.Component {
         <button id="A" onClick={this.synthSelect}>Synth A</button>
         <button id="B" onClick={this.synthSelect}>Synth B</button>
         <button id="C" onClick={this.synthSelect}>Synth C</button>
-        <Synth style={{margin: "auto"}} synth={this.state.synth}/>
+        <Synth style={{margin: "auto"}} synth={this.state.synth} user={this.state.user}/>
       </div>
     );
   }
