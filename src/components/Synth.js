@@ -66,50 +66,48 @@ applyPreset = (preset) => {
   })
 }
 
+playKey = (event) => {
+  if (event.repeat) {
+    return null
+  } else {
+    let key = event.key
+    if (this.state.keymappings[key]) {
+      let note = (this.state.keymappings[key]).replace('sh', '#')
+      const synth = this.props.synth
+      synth.disconnect()
+      const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
+      const gain = new Gain({"gain": this.state.gain})
+      synth.chain(reverb, gain, Destination)
+      synth.triggerAttackRelease(`${note}`)
+      this.setState({note: this.state.keymappings[key]})
+      let svg = document.getElementById(`${this.state.note}`)
+      if ((svg.id).includes('sh')) {
+        svg.setAttribute("fill", "skyblue")
+      } else {
+        svg.setAttribute("fill", "tomato")
+      }
+    }
+  }
+}
+
+endKey = (event) => {
+  let key = event.key
+  if (this.state.keymappings[key]) {
+    this.props.synth.triggerRelease()
+    let svg = document.getElementById(`${this.state.note}`)
+    if ((svg.id).includes('sh')) {
+      svg.setAttribute("fill", "black")
+    } else {
+      svg.setAttribute("fill", "white")
+    }
+  }
+}
+
 componentDidMount() {
     const self = this;
 
-    
-
-    function playKey(event) {
-      if (event.repeat) {
-        return null
-      } else {
-        let key = event.key
-        if (self.state.keymappings[key]) {
-          let note = (self.state.keymappings[key]).replace('sh', '#')
-          const synth = self.props.synth
-          synth.disconnect()
-          const reverb = new Reverb({"wet": self.state.reverb.wet, "decay": self.state.reverb.decay})
-          const gain = new Gain({"gain": self.state.gain})
-          synth.chain(reverb, gain, Destination)
-          synth.triggerAttackRelease(`${note}`)
-          self.setState({note: self.state.keymappings[key]})
-          let svg = document.getElementById(`${self.state.note}`)
-          if ((svg.id).includes('sh')) {
-            svg.setAttribute("fill", "skyblue")
-          } else {
-            svg.setAttribute("fill", "tomato")
-          }
-        }
-      }
-    }
-    // if clicked is true -- add a className with a # before note
-    function endKey(event) {
-      let key = event.key
-      if (self.state.keymappings[key]) {
-        self.props.synth.triggerRelease()
-        let svg = document.getElementById(`${self.state.note}`)
-        if ((svg.id).includes('sh')) {
-          svg.setAttribute("fill", "black")
-        } else {
-          svg.setAttribute("fill", "white")
-        }
-      }
-    }
-
-    document.addEventListener('keydown', playKey)
-    document.addEventListener('keyup', endKey)
+    document.addEventListener('keydown', self.playKey)
+    document.addEventListener('keyup', self.endKey)
   }
 
   render() {
