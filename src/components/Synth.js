@@ -67,7 +67,7 @@ applyPreset = (preset) => {
 }
 
 playKey = (event) => {
-  if (event.repeat  || event.target.nodeName === 'INPUT') {
+  if (event.repeat || event.target.nodeName === 'INPUT') {
     return null
   } else {
     let key = ""
