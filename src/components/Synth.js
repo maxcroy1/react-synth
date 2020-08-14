@@ -67,7 +67,7 @@ applyPreset = (preset) => {
 }
 
 playKey = (event) => {
-  if (event.repeat) {
+  if (event.repeat  || event.target.nodeName === 'INPUT') {
     return null
   } else {
     let key = ""
@@ -76,7 +76,6 @@ playKey = (event) => {
     }else{
       key = event.key
     }
-    console.log(key)
     if (this.state.keymappings[key]) {
       let note = (this.state.keymappings[key]).replace('sh', '#')
       const synth = this.props.synth

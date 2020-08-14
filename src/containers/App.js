@@ -14,12 +14,16 @@ class App extends React.Component {
     presets: []
   }
 
-  handleLogin = () => {
-    this.setState(previousState => {
-      return {
-        loginDropDown: !previousState.loginDropDown
-      }
-    })
+  handleLogin = (e) => {
+    if (e.target.innerText === 'Login/Register') {
+      this.setState(previousState => {
+        return {
+          loginDropDown: !previousState.loginDropDown
+        }
+      })
+    } else if (e.target.innerText === 'Logout') {
+      this.setState({user: "", presets: []})
+    }
   }
 
   handleChange = (e) => {
@@ -35,6 +39,12 @@ class App extends React.Component {
     }else if(e.target.value === "Login"){
       this.userLogin()
     }
+    e.target.parentElement.reset()
+    this.setState(previousState => {
+      return {
+        loginDropDown: !previousState.loginDropDown
+      }
+    })
   }
 
   userLogin = () => {
@@ -96,7 +106,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <button onClick={this.handleLogin}>Login/Register</button>
+        <button onClick={event => this.handleLogin(event)}>{this.state.user ? 'Logout' : 'Login/Register'}</button>
         {this.state.loginDropDown ? <LoginForm changeHandler={this.handleChange} submitHandler={this.handleSubmit}/> : null}
         <button id="A" onClick={this.synthSelect}>Synth A</button>
         <button id="B" onClick={this.synthSelect}>Synth B</button>
