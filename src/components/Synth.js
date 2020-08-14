@@ -78,7 +78,6 @@ playKey = (event) => {
     }
     console.log(key)
     if (this.state.keymappings[key]) {
-      
       let note = (this.state.keymappings[key]).replace('sh', '#')
       const synth = this.props.synth
       synth.disconnect()
@@ -88,7 +87,6 @@ playKey = (event) => {
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
       let svg = document.getElementById(`${this.state.note}`)
-      
       if ((svg.id).includes('sh')) {
         svg.setAttribute("fill", "skyblue")
       } else {
@@ -103,8 +101,6 @@ playKey = (event) => {
       synth.chain(reverb, gain, Destination)
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
-      let svg = document.getElementById(`${this.state.note}`)
-
     }
   }
 }
@@ -117,7 +113,7 @@ endKey = (event) => {
       key = event.key
   }
   const synth = this.props.synth
- if (this.state.keymappings[key]) {
+  if (this.state.keymappings[key]) {
     this.props.synth.triggerRelease()
     let svg = document.getElementById(`${this.state.note}`)
     if ((svg.id).includes('sh')) {
@@ -125,9 +121,7 @@ endKey = (event) => {
     } else {
       svg.setAttribute("fill", "white")
     }
-  }else if(Object.values(this.state.keymappings).includes(key)){
-    console.log("Released")
-
+  } else if(Object.values(this.state.keymappings).includes(key)) {
     synth.triggerRelease()
   }
 }
