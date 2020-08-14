@@ -7,8 +7,10 @@ class Keyboard extends React.Component{
 	render(){
 		return(
 			<div className="keyboard-container"> 
-				<FullKeyboard onClick={()=>{
-					console.log(this.props)
+				<FullKeyboard onClick={(e)=>{
+					this.props.playKey(e)
+				}} onMouseUp={(e)=>{
+					this.props.endKey(e)
 				}}/>
 			</div>
 		)

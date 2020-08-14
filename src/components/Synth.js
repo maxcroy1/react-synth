@@ -70,8 +70,15 @@ playKey = (event) => {
   if (event.repeat) {
     return null
   } else {
-    let key = event.key
+    let key = ""
+    if(event.target.id){
+      key = event.target.id
+    }else{
+      key = event.key
+    }
+    console.log(key)
     if (this.state.keymappings[key]) {
+      
       let note = (this.state.keymappings[key]).replace('sh', '#')
       const synth = this.props.synth
       synth.disconnect()
@@ -81,18 +88,36 @@ playKey = (event) => {
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
       let svg = document.getElementById(`${this.state.note}`)
+      
       if ((svg.id).includes('sh')) {
         svg.setAttribute("fill", "skyblue")
       } else {
         svg.setAttribute("fill", "tomato")
       }
+    } else if(Object.values(this.state.keymappings).includes(key)){
+      let note = key.replace('sh', '#')
+      const synth = this.props.synth
+      synth.disconnect()
+      const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
+      const gain = new Gain({"gain": this.state.gain})
+      synth.chain(reverb, gain, Destination)
+      synth.triggerAttackRelease(`${note}`)
+      this.setState({note: this.state.keymappings[key]})
+      let svg = document.getElementById(`${this.state.note}`)
+
     }
   }
 }
 
 endKey = (event) => {
-  let key = event.key
-  if (this.state.keymappings[key]) {
+ let key = ""
+    if(event.target.id){
+      key = event.target.id
+    }else{
+      key = event.key
+  }
+  const synth = this.props.synth
+ if (this.state.keymappings[key]) {
     this.props.synth.triggerRelease()
     let svg = document.getElementById(`${this.state.note}`)
     if ((svg.id).includes('sh')) {
@@ -100,6 +125,10 @@ endKey = (event) => {
     } else {
       svg.setAttribute("fill", "white")
     }
+  }else if(Object.values(this.state.keymappings).includes(key)){
+    console.log("Released")
+
+    synth.triggerRelease()
   }
 }
 
@@ -115,7 +144,7 @@ componentDidMount() {
           <div>
             {this.props.presets.map(preset => <Preset preset={preset} applyPreset={this.applyPreset}/>)}
             <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} decaySlider={this.decaySlider} user={this.props.user}/>
-            <Keyboard playKey={"playkey"}/>
+            <Keyboard playKey={this.playKey} endKey={this.endKey}/>
           </div>
       )
   }
