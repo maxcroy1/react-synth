@@ -121,7 +121,7 @@ endKey = (event) => {
     } else {
       svg.setAttribute("fill", "white")
     }
-  } else if(Object.values(this.state.keymappings).includes(key)) {
+  } else if(Object.values(this.state.keymappings).includes(key)){
     synth.triggerRelease()
   }
 }
