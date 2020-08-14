@@ -2,6 +2,7 @@ import React from 'react';
 import {Reverb, Gain, Destination} from 'tone';
 import Keyboard from './Keyboard'
 import Effects from '../containers/Effects'
+import Preset from './Preset'
 
 export default class Synth extends React.Component {
 
@@ -30,7 +31,7 @@ export default class Synth extends React.Component {
       wet: 0,
       decay: 0.1
     },
-    gain: 0
+    gain: 0.5
 }
 
 wetSlider = (e) => {
@@ -53,6 +54,16 @@ decaySlider = (e) => {
 
 gainSlider = (e) => {
     this.setState({gain: parseFloat(e.target.value)})
+}
+
+applyPreset = (preset) => {
+  this.setState({
+    reverb: {
+      wet: preset.reverb_wet,
+      decay: preset.reverb_decay
+    },
+    gain: preset.gain
+  })
 }
 
 componentDidMount() {
@@ -104,6 +115,7 @@ componentDidMount() {
   render() {
       return (
           <div>
+            {this.props.presets.map(preset => <Preset preset={preset} applyPreset={this.applyPreset}/>)}
             <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} decaySlider={this.decaySlider} user={this.props.user}/>
             <Keyboard />
           </div>
