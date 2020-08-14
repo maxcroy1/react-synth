@@ -24,7 +24,7 @@ export default class Synth extends React.Component {
       o: "Csh5",
       l: "D5",
       p: "Dsh5",
-      ":": "E5",
+      ";": "E5",
       "'": "F5"
     },
     reverb: {
@@ -117,7 +117,7 @@ componentDidMount() {
           <div>
             {this.props.presets.map(preset => <Preset preset={preset} applyPreset={this.applyPreset}/>)}
             <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} decaySlider={this.decaySlider} user={this.props.user}/>
-            <Keyboard />
+            <Keyboard playKey={"playkey"}/>
           </div>
       )
   }

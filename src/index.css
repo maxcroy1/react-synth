@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
@@ -12,15 +13,26 @@ code {
     monospace;
 }
 
-#C5:active, #D5:active, #E5:active, #F5:active, #G5:active, #A5:active, #B5:active, #C5:active, #D5:active, #E5:active, #F5:active{
+#C4:active, #D4:active, #E4:active, #F4:active, #G4:active, #A4:active, #B4:active, #C5:active, #D5:active, #E5:active, #F5:active{
 	fill: tomato;
 }
 
 
-#Csh:active, #Dsh:active, #Fsh:active, #Gsh:active, #Ash:active, #Csh2:active, #Dsh2:active{
+#Csh4:active, #Dsh4:active, #Fsh4:active, #Gsh4:active, #Ash4:active, #Csh5:active, #Dsh5:active{
 	fill: skyblue;
 }
 
 .active-key{
   fill: khaki;
+}
+
+.keyboard-container {
+ margin-top: 5%;
+}
+
+.keyboard-container svg{
+  width: 50%;
+  margin-top: 30%;
+  text-align: center;
+  margin: 0 auto;
 }
