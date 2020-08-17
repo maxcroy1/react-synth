@@ -18,7 +18,8 @@ export default class Navbar extends React.Component{
                 <NavLink to='/' exact style={link} activeStyle={{background: 'darkblue'}}>Synth</NavLink>
                 <NavLink to='/AMSynth' exact style={link} activeStyle={{background: 'darkblue'}}>AMSynth</NavLink>
                 <NavLink to='/FMSynth' exact style={link} activeStyle={{background: 'darkblue'}}>FMSynth</NavLink>
-                { !this.props.user ? <NavLink to='/login' exact style={link} activeStyle={{background: 'darkblue'}}>Login/Register</NavLink> : <div style={link} activeStyle={{background: 'darkblue'}} onClick={event => this.props.handleLogin(event)}>Logout</div>}
+                <NavLink to='/DuoSynth' exact style={link} activeStyle={{background: 'darkblue'}}>DuoSynth</NavLink>
+                {!this.props.user ? <NavLink to='/login' exact style={link} activeStyle={{background: 'darkblue'}}>Login/Register</NavLink> : <div style={link} activeStyle={{background: 'darkblue'}} onClick={event => this.props.handleLogin(event)}>Logout</div>}
             </div>
         )
     }
