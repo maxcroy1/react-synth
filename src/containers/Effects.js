@@ -1,5 +1,4 @@
 import React from 'react';
-import App from './App'
 export default class Effects extends React.Component{
 
 

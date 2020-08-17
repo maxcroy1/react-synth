@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar';
 class App extends React.Component {
 
   state={
-    loginDropDown: false, 
+    logout: false, 
     username: "",
     password: "", 
     synth: new AMSynth().toDestination(), 
@@ -35,15 +35,10 @@ class App extends React.Component {
   }
 
   handleLogin = (e) => {
-    if (e.target.innerText === 'Login/Register') {
-      this.setState(previousState => {
-        return {
-          loginDropDown: !previousState.loginDropDown
-        }
-      })
-    } else if (e.target.innerText === 'Logout') {
+    if (e.target.innerText === 'Logout') {
       localStorage.removeItem('token')
       this.setState({user: "", presets: []})
+      window.location.reload();
     }
   }
 
@@ -88,6 +83,7 @@ class App extends React.Component {
       .then(json => {
         localStorage.setItem('token', json.jwt)
         this.setState({user: json.user.id, presets: json.presets})
+        window.location.assign('/')
       })
       .catch(error => console.log(error))
   }
@@ -112,6 +108,7 @@ class App extends React.Component {
       .then(json => {
         localStorage.setItem('token', json.jwt)
         this.setState({user: json.user.id})
+        window.location.assign('/')
       })
       .catch(error => console.log(error))
   }
@@ -140,7 +137,7 @@ class App extends React.Component {
           <Route exact path='/' render={props => (<Synth {...props} synth={this.state.synth} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
           <Route exact path='/FMSynth' render={props => (<FMSynth {...props} synth={this.state.synth} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
           <Route exact path='/AMSynth' render={props => (<AMSynth {...props} synth={this.state.synth} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
-          <Route exact path='/login' component={LoginForm}/>
+          <Route exact path='/login' render={props => (<LoginForm {...props} changeHandler={this.handleChange} submitHandler={this.handleSubmit}/>)}/>
         </div>
       </Router>
     );
