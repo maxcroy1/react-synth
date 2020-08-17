@@ -145,7 +145,7 @@ class App extends React.Component {
           <Route exact path='/login' render={props => (<LoginForm {...props} changeHandler={this.handleChange} submitHandler={this.handleSubmit}/>)}/>
         </div>
       </Router>
-    );
+    )
   }
 }
 

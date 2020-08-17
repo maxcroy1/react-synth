@@ -131,10 +131,15 @@ endKey = (event) => {
 
 componentDidMount() {
     const self = this;
-
     document.addEventListener('keydown', self.playKey)
     document.addEventListener('keyup', self.endKey)
-  }
+}
+
+componentWillUnmount() {
+  const self = this;
+  document.removeEventListener('keydown', self.playKey)
+  document.removeEventListener('keyup', self.endKey)
+}
 
   render() {
       return (
