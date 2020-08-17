@@ -1,7 +1,7 @@
 import React from 'react';
 import Synth from '../components/Synth'
 import LoginForm from '../components/LoginForm'
-import {AMSynth, DuoSynth, FMSynth} from 'tone'
+import {MonoSynth, AMSynth, DuoSynth, FMSynth} from 'tone'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Navbar from '../components/Navbar';
 import AM_Synth from '../components/AM_Synth'
@@ -15,7 +15,7 @@ class App extends React.Component {
     logout: false, 
     username: "",
     password: "", 
-    synth: new AMSynth().toDestination(), 
+    synth: new MonoSynth().toDestination(), 
     user: "", 
     presets: []
   }
