@@ -2,7 +2,8 @@ import React from 'react';
 import Synth from '../components/Synth'
 import LoginForm from '../components/LoginForm'
 import {AMSynth, DuoSynth, FMSynth} from 'tone'
-import Effects from './Effects'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Navbar from '../components/Navbar';
 
 class App extends React.Component {
 
@@ -133,14 +134,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <button onClick={event => this.handleLogin(event)}>{this.state.user ? 'Logout' : 'Login/Register'}</button>
-        {this.state.loginDropDown ? <LoginForm changeHandler={this.handleChange} submitHandler={this.handleSubmit}/> : null}
-        <button id="A" onClick={this.synthSelect}>Synth A</button>
-        <button id="B" onClick={this.synthSelect}>Synth B</button>
-        <button id="C" onClick={this.synthSelect}>Synth C</button>
-        <Synth style={{margin: "auto"}} synth={this.state.synth} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>
-      </div>
+      <Router>
+        <div className="App">
+          <Navbar user={this.state.user} handleLogin={this.handleLogin} loginDropDown={this.state.loginDropDown} />
+          <Route exact path='/' render={props => (<Synth {...props} synth={this.state.synth} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
+          <Route exact path='/FMSynth' render={props => (<FMSynth {...props} synth={this.state.synth} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
+          <Route exact path='/AMSynth' render={props => (<AMSynth {...props} synth={this.state.synth} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
+          <Route exact path='/login' component={LoginForm}/>
+        </div>
+      </Router>
     );
   }
 }
