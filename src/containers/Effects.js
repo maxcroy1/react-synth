@@ -1,6 +1,7 @@
 import React from 'react';
-
+import App from './App'
 export default class Effects extends React.Component{
+
 
     handlePreset(props){
         let formData = {
@@ -22,12 +23,14 @@ export default class Effects extends React.Component{
         }
         fetch("http://localhost:3000/api/v1/users/" + this.props.user, configObj)
             .then(resp => resp.json())
-            .then(json => console.log(json))
+            .then(json => this.props.addLastPreset(json.synth_setting))
             .catch(error => console.log(error))
     }
 
     render(){
+        console.log(this.props)
         return(
+            
             <div>
                 <h1>Effects</h1>
                 <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>

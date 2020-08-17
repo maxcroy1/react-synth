@@ -2,6 +2,7 @@ import React from 'react';
 import Synth from '../components/Synth'
 import LoginForm from '../components/LoginForm'
 import {AMSynth, DuoSynth, FMSynth} from 'tone'
+import Effects from './Effects'
 
 class App extends React.Component {
 
@@ -125,6 +126,11 @@ class App extends React.Component {
     }
   }
 
+  addLastPreset = (preset) => {
+    let newArray = [...this.state.presets, preset]
+    this.setState({presets: newArray})
+  }
+
   render() {
     return (
       <div className="App">
@@ -133,7 +139,7 @@ class App extends React.Component {
         <button id="A" onClick={this.synthSelect}>Synth A</button>
         <button id="B" onClick={this.synthSelect}>Synth B</button>
         <button id="C" onClick={this.synthSelect}>Synth C</button>
-        <Synth style={{margin: "auto"}} synth={this.state.synth} user={this.state.user} presets={this.state.presets}/>
+        <Synth style={{margin: "auto"}} synth={this.state.synth} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>
       </div>
     );
   }
