@@ -14,6 +14,24 @@ class App extends React.Component {
     presets: []
   }
 
+  componentDidMount() {
+    let token = localStorage.getItem("token")
+    if (token) {
+      fetch('http://localhost:3000/api/v1/profile', {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}`}
+      })
+        .then(resp => resp.json())
+        .then(json => {
+          this.setState({
+            user: json.user.id,
+            presets: json.presets
+          })
+        })
+        .catch(error => console.log(error))
+    }
+  }
+
   handleLogin = (e) => {
     if (e.target.innerText === 'Login/Register') {
       this.setState(previousState => {
@@ -22,6 +40,7 @@ class App extends React.Component {
         }
       })
     } else if (e.target.innerText === 'Logout') {
+      localStorage.removeItem('token')
       this.setState({user: "", presets: []})
     }
   }
@@ -65,7 +84,7 @@ class App extends React.Component {
     fetch("http://localhost:3000/api/v1/login", configObj)
       .then(resp => resp.json())
       .then(json => {
-        console.log(json)
+        localStorage.setItem('token', json.jwt)
         this.setState({user: json.user.id, presets: json.presets})
       })
       .catch(error => console.log(error))
@@ -88,7 +107,10 @@ class App extends React.Component {
     }
     fetch("http://localhost:3000/api/v1/users", configObj)
       .then(resp => resp.json())
-      .then(json => this.setState({user: json.user.id}))
+      .then(json => {
+        localStorage.setItem('token', json.jwt)
+        this.setState({user: json.user.id})
+      })
       .catch(error => console.log(error))
   }
 
