@@ -112,7 +112,7 @@ endKey = (event) => {
       key = event.key
   }
   const synth = this.props.synth
-  if (this.state.keymappings[key]) {
+  if (this.state.keymappings[key] && this.state.note) {
     this.props.synth.triggerRelease()
     let svg = document.getElementById(`${this.state.note}`)
     if ((svg.id).includes('sh')) {
