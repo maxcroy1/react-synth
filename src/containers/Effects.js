@@ -1,7 +1,6 @@
 import React from 'react';
 export default class Effects extends React.Component{
 
-
     handlePreset(props){
         let formData = {
             id: props.user,

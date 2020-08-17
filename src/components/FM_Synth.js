@@ -34,7 +34,6 @@ export default class FM_Synth extends React.Component {
       decay: 0.1
     },
     gain: 0.5,
-
     synth: new FMSynth().toDestination()
 }
 
@@ -144,7 +143,6 @@ componentWillUnmount() {
   render() {
       return (
           <div>
-            <h1> FM SYNTH ROUTE </h1>
             {this.props.presets.map(preset => <Preset preset={preset} applyPreset={this.applyPreset}/>)}
             <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} decaySlider={this.decaySlider} user={this.props.user} addLastPreset={this.props.addLastPreset}/>
             <Keyboard playKey={this.playKey} endKey={this.endKey}/>

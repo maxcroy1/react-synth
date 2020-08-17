@@ -1,5 +1,5 @@
 import React from 'react';
-import {Reverb, Gain, Destination} from 'tone';
+import {MonoSynth, Reverb, Gain, Destination} from 'tone';
 import Keyboard from './Keyboard'
 import Effects from '../containers/Effects'
 import Preset from './Preset'
@@ -31,7 +31,8 @@ export default class Synth extends React.Component {
       wet: 0,
       decay: 0.1
     },
-    gain: 0.5
+    gain: 0.5,
+    synth: new MonoSynth().toDestination()
 }
 
 wetSlider = (e) => {
@@ -78,7 +79,7 @@ playKey = (event) => {
     }
     if (this.state.keymappings[key]) {
       let note = (this.state.keymappings[key]).replace('sh', '#')
-      const synth = this.props.synth
+      const synth = this.state.synth
       synth.disconnect()
       const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
       const gain = new Gain({"gain": this.state.gain})
@@ -93,7 +94,7 @@ playKey = (event) => {
       }
     } else if(Object.values(this.state.keymappings).includes(key)){
       let note = key.replace('sh', '#')
-      const synth = this.props.synth
+      const synth = this.state.synth
       synth.disconnect()
       const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
       const gain = new Gain({"gain": this.state.gain})
@@ -111,9 +112,9 @@ endKey = (event) => {
     }else{
       key = event.key
   }
-  const synth = this.props.synth
+  const synth = this.state.synth
   if (this.state.keymappings[key] && this.state.note) {
-    this.props.synth.triggerRelease()
+    synth.triggerRelease()
     let svg = document.getElementById(`${this.state.note}`)
     if ((svg.id).includes('sh')) {
       svg.setAttribute("fill", "black")
