@@ -39,21 +39,24 @@ export default class Effects extends React.Component{
             const drag = Draggable.create(".box", {type:"x,y", edgeResistance:0.65, bounds:"#container", inertia:true});
 
         return(
+            <div className="all-slides-container">
+               
+                 <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
+                    <div className="slidecontainer">
+                        <label>Gain  </label>
 
-            <div className="effects-style">
-                <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
-                <div>
-                    <h3>Reverb</h3>
-                    <label>Wet</label>
-                    <input type="range" min="0" max="1" step="0.1" value={this.props.reverb.wet} className="slider" id="reverbWet" onChange={this.props.wetSlider}></input>
-                    <label>Decay</label>
-                    <input type="range" min="0.1" max="10" step="0.1" value={this.props.reverb.decay} className="slider" id="reverbDecay" onChange={this.props.decaySlider}></input>
-                </div>
-                <div className="gain-slider">
-                    <label>Gain</label>
-                    <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="slider" id="Gain" onChange={this.props.gainSlider}></input>
-                    <GainSlider />
-                </div>
+                        <input class="slider" placeholder="gain" type="range" min="0" max="1" step="0.1" value={this.props.gain}  id="Gain" onChange={this.props.gainSlider}></input>
+                        <br />
+                        <br />
+                        <label>Reverb  </label>
+                        <br />
+                        <br />
+                        <label>Wet  </label>
+                        <input type="range" min="0" max="1" step="0.1" value={this.props.reverb.wet} className="slider" id="reverbWet" onChange={this.props.wetSlider}></input>
+                        <br />
+                        <label>Decay</label>
+                        <input type="range" min="0.1" max="10" step="0.1" value={this.props.reverb.decay} className="slider" id="reverbDecay" onChange={this.props.decaySlider}></input>                
+                    </div>
             </div>
         )
     }

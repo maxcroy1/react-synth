@@ -27,11 +27,16 @@ code {
 }
 
 .keyboard-container {
- margin-top: 5%;
+}
+
+svg{
+  width: 80%;
 }
 
 
-
+img{
+  vertical-align: center;
+}
 .nav-container{
   text-align: center;
   width: 100%;
@@ -45,7 +50,7 @@ code {
 }
 
 .inner-left{
-  padding-left: 50px;
+  padding-left: 20px;
   text-decoration: none;
   color: black;
 
@@ -54,6 +59,7 @@ code {
 .left-nav{
   width: 25%;
   display: inline-block;
+
 }
 
 .left-nav:hover{
@@ -64,11 +70,13 @@ code {
 .center-nav{
   width: 25%;
   display: inline-block;
+  margin-top: 20px;
 }
 
 
 .center-nav img{
-  width: 50%;
+  width: 70%;
+  display: inline;
 }
 
 .right-nav{
@@ -87,14 +95,11 @@ svg {
 }
 
 .effects-style{
-  margin-top: 5%;  
-  text-align: center;
+  width: 20%;
+  margin: 0 auto;
 }
 
-.gain-slider{
-  margin-top: 100px;
-  height: 100px;
-}
+
 
 circle#Oval{
   transform-origin: 50% 50%;
@@ -107,7 +112,115 @@ circle#Oval{
   position: absolute;
 }
 
+.slidecontainer {
+  height: 200px;
+  width: 20%;
+  padding: 20px;
+  text-align:center;
+  margin: 0 auto;
+}
+
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 60%; /* Full-width */
+  height: 2px; /* Specified height */
+  background: black; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  transform: rotate();
+  margin-bottom: 30px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: grey; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+    -webkit-box-shadow: 3px 3px 5px 0px black;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 0px black;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 0px black;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
+}
+
+.slider::-moz-range-thumb {
+  width: 40px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: grey; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  float: right
+}
+
+.slider-gain {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 10%; /* Full-width */
+  height: 2px; /* Specified height */
+  background: black; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+
+}
+/* Mouse-over effects */
+.slider-gain:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider-gain::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: grey; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+    -webkit-box-shadow: 3px 3px 5px 0px black;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 0px black;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 0px black;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
+}
+
+.slider-gain::-moz-range-thumb {
+  width: 40px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: grey; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slide-container{
+  display: ƒlex;
+}
 
 
+label{
+  color: grey;
+  padding: 8%;
+}
 
+.slidecontainerleft{
+  background-color: green;
+  text-align: center;
+  float:left;
+  margin: auto;
+  width: 300px;
+  transform: rotate(270deg);
 
+}
+
+.all-slides-container{
+  width: 100%;
+  float: left;
+  margin: auto;
+}

@@ -146,6 +146,8 @@ componentWillUnmount() {
             {this.props.presets.map(preset => <Preset preset={preset} applyPreset={this.applyPreset}/>)}
             <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} decaySlider={this.decaySlider} user={this.props.user} addLastPreset={this.props.addLastPreset}/>
             <Keyboard playKey={this.playKey} endKey={this.endKey}/>
+
+
           </div>
       )
   }
