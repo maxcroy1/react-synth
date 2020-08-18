@@ -1,5 +1,5 @@
 import React from 'react';
-import {MonoSynth, Reverb, Gain, Destination} from 'tone';
+import {MonoSynth, Reverb, Gain, Destination, BitCrusher, Chebyshev} from 'tone';
 import Keyboard from './Keyboard'
 import Effects from '../containers/Effects'
 import Preset from './Preset'
@@ -32,6 +32,8 @@ export default class Synth extends React.Component {
       decay: 0.1
     },
     gain: 0.5,
+    bitCrusher: -16,
+    Chebyshev: 1,
     synth: new MonoSynth().toDestination()
 }
 
@@ -57,13 +59,22 @@ gainSlider = (e) => {
     this.setState({gain: parseFloat(e.target.value)})
 }
 
+bitCrusherSlider = (e) => {
+  this.setState({bitCrusher: parseFloat(e.target.value)})
+}
+
+chebySlider = (e) => {
+  this.setState({Chebyshev: e.target.value})
+}
+
 applyPreset = (preset) => {
   this.setState({
     reverb: {
       wet: preset.reverb_wet,
       decay: preset.reverb_decay
     },
-    gain: preset.gain
+    gain: preset.gain,
+    bitCrusher: preset.bitCrusher
   })
 }
 
@@ -83,7 +94,9 @@ playKey = (event) => {
       synth.disconnect()
       const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
       const gain = new Gain({"gain": this.state.gain})
-      synth.chain(reverb, gain, Destination)
+      const bitCrusher = new BitCrusher({'bits': -(this.state.bitCrusher)})
+      const cheby = new Chebyshev(this.state.Chebyshev)
+      synth.chain(reverb, gain, bitCrusher, cheby, Destination)
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
       let svg = document.getElementById(`${this.state.note}`)
@@ -98,7 +111,9 @@ playKey = (event) => {
       synth.disconnect()
       const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
       const gain = new Gain({"gain": this.state.gain})
-      synth.chain(reverb, gain, Destination)
+      const bitCrusher = new BitCrusher({'bits': -(this.state.bitCrusher)})
+      const cheby = new Chebyshev(this.state.Chebyshev)
+      synth.chain(reverb, gain, bitCrusher, cheby, Destination)
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
     }
@@ -143,7 +158,7 @@ componentWillUnmount() {
       return (
           <div>
             {this.props.presets.map(preset => <Preset preset={preset} applyPreset={this.applyPreset}/>)}
-            <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} decaySlider={this.decaySlider} user={this.props.user} addLastPreset={this.props.addLastPreset}/>
+            <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gain} reverb={this.state.reverb} bitCrush={this.state.bitCrusher} decaySlider={this.decaySlider} user={this.props.user} addLastPreset={this.props.addLastPreset} bcSlider={this.bitCrusherSlider} chebyshev={this.state.Chebyshev} chebySlider={this.chebySlider}/>
             <Keyboard playKey={this.playKey} endKey={this.endKey}/>
           </div>
       )

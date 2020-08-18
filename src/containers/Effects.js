@@ -33,14 +33,23 @@ export default class Effects extends React.Component{
                 <h1>Effects</h1>
                 <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
                 <div>
-                    <h3>Reverb</h3>
+                    <h5>Reverb</h5>
                     <label>Wet</label>
                     <input type="range" min="0" max="1" step="0.1" value={this.props.reverb.wet} className="slider" id="reverbWet" onChange={this.props.wetSlider}></input>
                     <label>Decay</label>
                     <input type="range" min="0.1" max="10" step="0.1" value={this.props.reverb.decay} className="slider" id="reverbDecay" onChange={this.props.decaySlider}></input>
                 </div>
-                <label>Gain</label>
-                <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="slider" id="Gain" onChange={this.props.gainSlider}></input>
+                <div>
+                    <h5>Gain</h5>
+                    <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="slider" id="Gain" onChange={this.props.gainSlider}></input>
+                </div>
+                <div>
+                    <h5>Distortion</h5>
+                    <label>BitCrusher</label>
+                    <input type="range" min="-16" max="-4" step="1" value={this.props.bitCrush} className="slider" id="BitCrusher" onChange={this.props.bcSlider}></input>
+                    <label>Chebyshev</label>
+                    <input type="range" min="1" max="100" step="1" value={this.props.chebyshev} className="slider" id="Chebyshev" onChange={this.props.chebySlider}></input>
+                </div>
             </div>
         )
     }
