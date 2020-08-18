@@ -1,5 +1,5 @@
 import React from 'react';
-import {MonoSynth, Reverb, Gain, Destination, BitCrusher, Chebyshev} from 'tone';
+import {MonoSynth, Reverb, Gain, Destination, Distortion, BitCrusher, Chebyshev} from 'tone';
 import Keyboard from './Keyboard'
 import Effects from '../containers/Effects'
 import Preset from './Preset'
@@ -112,13 +112,9 @@ playKey = (event) => {
       var dist = new Distortion(0.8);
       const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
       const gain = new Gain({"gain": this.state.gain})
-<<<<<<< HEAD
       const bitCrusher = new BitCrusher({'bits': -(this.state.bitCrusher)})
       const cheby = new Chebyshev(this.state.Chebyshev)
       synth.chain(reverb, gain, bitCrusher, cheby, Destination)
-=======
-      synth.chain(reverb, gain, dist, Destination)
->>>>>>> styles
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
     }

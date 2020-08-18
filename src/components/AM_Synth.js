@@ -96,12 +96,9 @@ playKey = (event) => {
       synth.disconnect()
       const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
       const gain = new Gain({"gain": this.state.gain})
-<<<<<<< HEAD
       const bitCrusher = new BitCrusher({'bits': -(this.state.bitCrusher)})
       const cheby = new Chebyshev(this.state.Chebyshev)
       synth.chain(reverb, gain, bitCrusher, cheby, Destination)
-=======
->>>>>>> styles
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
       let svg = document.getElementById(`${this.state.note}`)

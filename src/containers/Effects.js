@@ -2,6 +2,7 @@ import React from 'react';
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import GainSlider from '../components/GainSlider'
+import { Distortion } from 'tone';
 
 gsap.registerPlugin(Draggable);
 export default class Effects extends React.Component{
@@ -40,22 +41,21 @@ export default class Effects extends React.Component{
 
         return(
             
-            <div>
-                <h1>Effects</h1>
+            <div className="slideContainer">
                 <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
                 <div>
-                    <h5>Reverb</h5>
                     <label>Wet</label>
                     <input type="range" min="0" max="1" step="0.1" value={this.props.reverb.wet} className="slider" id="reverbWet" onChange={this.props.wetSlider}></input>
+                </div>
+                <div>
                     <label>Decay</label>
                     <input type="range" min="0.1" max="10" step="0.1" value={this.props.reverb.decay} className="slider" id="reverbDecay" onChange={this.props.decaySlider}></input>
                 </div>
                 <div>
-                    <h5>Gain</h5>
+                    <label>Gain </label>
                     <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="slider" id="Gain" onChange={this.props.gainSlider}></input>
                 </div>
                 <div>
-                    <h5>Distortion</h5>
                     <label>BitCrusher</label>
                     <input type="range" min="-16" max="-4" step="1" value={this.props.bitCrush} className="slider" id="BitCrusher" onChange={this.props.bcSlider}></input>
                     <label>Chebyshev</label>
