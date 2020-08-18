@@ -1,5 +1,5 @@
 import React from 'react';
-import {MonoSynth, Reverb, Gain, Destination} from 'tone';
+import {MonoSynth, Reverb, Gain, Distortion,  Destination} from 'tone';
 import Keyboard from './Keyboard'
 import Effects from '../containers/Effects'
 import Preset from './Preset'
@@ -96,9 +96,10 @@ playKey = (event) => {
       let note = key.replace('sh', '#')
       const synth = this.state.synth
       synth.disconnect()
+      var dist = new Distortion(0.8);
       const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
       const gain = new Gain({"gain": this.state.gain})
-      synth.chain(reverb, gain, Destination)
+      synth.chain(reverb, gain, dist, Destination)
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
     }

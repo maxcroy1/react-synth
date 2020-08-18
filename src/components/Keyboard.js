@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as FullKeyboard} from '../keys.svg'
+import {ReactComponent as FullKeyboard} from '../keys2.svg'
 
 
 class Keyboard extends React.Component{

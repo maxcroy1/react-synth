@@ -1,5 +1,5 @@
 import React from 'react';
-import {Reverb, Gain, Destination} from 'tone';
+import {Reverb, Gain, LFO, Destination} from 'tone';
 import Keyboard from './Keyboard'
 import Effects from '../containers/Effects'
 import Preset from './Preset'
@@ -34,6 +34,7 @@ export default class AM_Synth extends React.Component {
       decay: 0.1
     },
     gain: 0.5,
+    distortion: 1,
 
     synth: new AMSynth().toDestination()
 }
@@ -86,7 +87,6 @@ playKey = (event) => {
       synth.disconnect()
       const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
       const gain = new Gain({"gain": this.state.gain})
-      synth.chain(reverb, gain, Destination)
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
       let svg = document.getElementById(`${this.state.note}`)

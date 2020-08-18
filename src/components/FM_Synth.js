@@ -83,9 +83,6 @@ playKey = (event) => {
       let note = (this.state.keymappings[key]).replace('sh', '#')
       const synth = this.state.synth
       synth.disconnect()
-      const reverb = new Reverb({"wet": this.state.reverb.wet, "decay": this.state.reverb.decay})
-      const gain = new Gain({"gain": this.state.gain})
-      synth.chain(reverb, gain, Destination)
       synth.triggerAttackRelease(`${note}`)
       this.setState({note: this.state.keymappings[key]})
       let svg = document.getElementById(`${this.state.note}`)
