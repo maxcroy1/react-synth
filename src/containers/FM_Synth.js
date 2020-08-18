@@ -1,12 +1,12 @@
 import React from 'react';
 import {Reverb, Gain, Destination, BitCrusher, Chebyshev} from 'tone';
-import Keyboard from './Keyboard'
-import Effects from '../containers/Effects'
-import Preset from './Preset'
-import {AMSynth} from 'tone'
+import Keyboard from '../components/Keyboard'
+import Effects from '../components/Effects'
+import Preset from '../components/Preset'
+import {FMSynth} from 'tone'
 
 
-export default class AM_Synth extends React.Component {
+export default class FM_Synth extends React.Component {
 
   state={
     keymappings: {
@@ -36,7 +36,7 @@ export default class AM_Synth extends React.Component {
     gain: 0.5,
     bitCrusher: -16,
     Chebyshev: 1,
-    synth: new AMSynth().toDestination()
+    synth: new FMSynth().toDestination()
 }
 
 wetSlider = (e) => {

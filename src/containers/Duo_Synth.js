@@ -1,8 +1,8 @@
 import React from 'react';
 import {Reverb, Gain, Destination, BitCrusher, Chebyshev} from 'tone';
-import Keyboard from './Keyboard'
-import Effects from '../containers/Effects'
-import Preset from './Preset'
+import Keyboard from '../components/Keyboard'
+import Effects from '../components/Effects'
+import Preset from '../components/Preset'
 import {DuoSynth} from 'tone'
 
 

@@ -10,7 +10,6 @@ export default class Effects extends React.Component{
                 reverb_decay: props.reverb.decay
             }
         }
-        console.log(formData)
         let configObj = {
             method: 'PATCH',
             headers: {
@@ -26,7 +25,6 @@ export default class Effects extends React.Component{
     }
 
     render(){
-        console.log(this.props)
         return(
             
             <div>

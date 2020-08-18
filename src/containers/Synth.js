@@ -1,12 +1,10 @@
 import React from 'react';
-import {Reverb, Gain, Destination, BitCrusher, Chebyshev} from 'tone';
-import Keyboard from './Keyboard'
-import Effects from '../containers/Effects'
-import Preset from './Preset'
-import {FMSynth} from 'tone'
+import {MonoSynth, Reverb, Gain, Destination, BitCrusher, Chebyshev} from 'tone';
+import Keyboard from '../components/Keyboard'
+import Effects from '../components/Effects'
+import Preset from '../components/Preset'
 
-
-export default class FM_Synth extends React.Component {
+export default class Synth extends React.Component {
 
   state={
     keymappings: {
@@ -36,7 +34,7 @@ export default class FM_Synth extends React.Component {
     gain: 0.5,
     bitCrusher: -16,
     Chebyshev: 1,
-    synth: new FMSynth().toDestination()
+    synth: new MonoSynth().toDestination()
 }
 
 wetSlider = (e) => {
@@ -131,7 +129,7 @@ endKey = (event) => {
   }
   const synth = this.state.synth
   if (this.state.keymappings[key] && this.state.note) {
-    this.state.synth.triggerRelease()
+    synth.triggerRelease()
     let svg = document.getElementById(`${this.state.note}`)
     if ((svg.id).includes('sh')) {
       svg.setAttribute("fill", "black")
@@ -145,6 +143,7 @@ endKey = (event) => {
 
 componentDidMount() {
     const self = this;
+    console.log(self.props.keymappings)
     document.addEventListener('keydown', self.playKey)
     document.addEventListener('keyup', self.endKey)
 }
