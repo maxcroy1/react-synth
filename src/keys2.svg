@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1131px" height="482px" viewBox="0 0 1131 482" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Untitled 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="1" width="1091" height="431"></rect>
+        <filter x="-4.4%" y="-4.9%" width="107.5%" height="119.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="-7" dy="22" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="74" y="0" width="49" height="250"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-5" x="171" y="0" width="49" height="250"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-7" x="370" y="0" width="49" height="250"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-9" x="471" y="0" width="49" height="250"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-11" x="571" y="0" width="49" height="250"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-12">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-13" x="770" y="0" width="49" height="250"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-14">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-15" x="867" y="0" width="49" height="250"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-16">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-147.000000, -468.000000)">
+            <g id="Untitled-8" transform="translate(174.000000, 476.000000)">
+                <g id="Rectangle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <rect id="C4" fill="#EEEEEE" fill-rule="nonzero" x="0" y="2" width="98" height="430"></rect>
+                <rect id="A4" fill="#EEEEEE" fill-rule="nonzero" x="496" y="2" width="98" height="430"></rect>
+                <rect id="D4" fill="#EEEEEE" fill-rule="nonzero" x="99" y="2" width="98" height="430"></rect>
+                <rect id="B4" fill="#EEEEEE" fill-rule="nonzero" x="595" y="2" width="98" height="430"></rect>
+                <rect id="E4" fill="#EEEEEE" fill-rule="nonzero" x="198" y="2" width="98" height="430"></rect>
+                <rect id="C5" fill="#EEEEEE" fill-rule="nonzero" x="694" y="2" width="98" height="430"></rect>
+                <rect id="F4" fill="#EEEEEE" fill-rule="nonzero" x="297" y="2" width="98" height="430"></rect>
+                <rect id="D5" fill="#EEEEEE" fill-rule="nonzero" x="794" y="2" width="98" height="430"></rect>
+                <rect id="G4" fill="#EEEEEE" fill-rule="nonzero" x="397" y="2" width="98" height="430"></rect>
+                <rect id="E5" fill="#EEEEEE" fill-rule="nonzero" x="893" y="2" width="98" height="430"></rect>
+                <rect id="F5" fill="#EEEEEE" fill-rule="nonzero" x="992" y="2" width="98" height="430"></rect>
+                <g id="Csh4" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#000000" xlink:href="#path-3"></use>
+                </g>
+                <g id="Dsh4" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="#000000" xlink:href="#path-5"></use>
+                </g>
+                <g id="Fsh4" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                    <use fill="#000000" xlink:href="#path-7"></use>
+                </g>
+                <g id="Gsh4" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                    <use fill="#000000" xlink:href="#path-9"></use>
+                </g>
+                <g id="Ash4" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
+                    <use fill="#000000" xlink:href="#path-11"></use>
+                </g>
+                <g id="Csh5" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-14)" xlink:href="#path-13"></use>
+                    <use fill="#000000" xlink:href="#path-13"></use>
+                </g>
+                <g id="Dsh5" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-16)" xlink:href="#path-15"></use>
+                    <use fill="#000000" xlink:href="#path-15"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

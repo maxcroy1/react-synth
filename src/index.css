@@ -1,11 +1,11 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-weight: 700;
+    background-color: #444444;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 
 code {
@@ -27,12 +27,200 @@ code {
 }
 
 .keyboard-container {
- margin-top: 5%;
 }
 
-.keyboard-container svg{
-  width: 50%;
-  margin-top: 30%;
+svg{
+  width: 80%;
+}
+
+
+img{
+  vertical-align: center;
+}
+.nav-container{
   text-align: center;
+  width: 100%;
+  height: 100px;
+  background-color: #F2F2F2;
+}
+
+.inner-nav{
+  width: 100%;
   margin: 0 auto;
+}
+
+.inner-left{
+  padding-left: 20px;
+  text-decoration: none;
+  color: black;
+
+}
+
+.left-nav{
+  width: 25%;
+  display: inline-block;
+
+}
+
+.left-nav:hover{
+  width: 25%;
+  text-decoration:underline;
+}
+
+.center-nav{
+  width: 25%;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+
+.center-nav img{
+  width: 70%;
+  display: inline;
+}
+
+.right-nav{
+  display: inline-block;
+  width: 25%;
+
+}
+
+/*app background color*/
+.app-main{
+}
+
+svg {
+ display: block;
+ margin: auto;
+}
+
+.effects-style{
+  width: 20%;
+  margin: 0 auto;
+}
+
+
+
+circle#Oval{
+  transform-origin: 50% 50%;
+  transform: rotate(50deg);
+}
+
+.donut{
+  color: green;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.slidecontainer {
+  height: 200px;
+  width: 20%;
+  padding: 20px;
+  text-align:center;
+  margin: 0 auto;
+}
+
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 60%; /* Full-width */
+  height: 2px; /* Specified height */
+  background: black; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  transform: rotate();
+  margin-bottom: 30px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: grey; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+    -webkit-box-shadow: 3px 3px 5px 0px black;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 0px black;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 0px black;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
+}
+
+.slider::-moz-range-thumb {
+  width: 40px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: grey; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  float: right
+}
+
+.slider-gain {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 10%; /* Full-width */
+  height: 2px; /* Specified height */
+  background: black; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+
+}
+/* Mouse-over effects */
+.slider-gain:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider-gain::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: grey; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+    -webkit-box-shadow: 3px 3px 5px 0px black;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 0px black;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 0px black;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
+}
+
+.slider-gain::-moz-range-thumb {
+  width: 40px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: grey; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slide-container{
+  display: ƒlex;
+}
+
+
+label{
+  color: grey;
+  padding: 8%;
+}
+
+.slidecontainerleft{
+  background-color: green;
+  text-align: center;
+  float:left;
+  margin: auto;
+  width: 300px;
+  transform: rotate(270deg);
+
+}
+
+.all-slides-container{
+  width: 100%;
+  float: left;
+  margin: auto;
 }

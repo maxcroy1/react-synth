@@ -116,12 +116,14 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          <Navbar user={this.state.user} handleLogin={this.handleLogin} loginDropDown={this.state.loginDropDown} />
-          <Route exact path='/' render={props => (<Synth {...props} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
-          <Route exact path='/FMSynth' render={props => (<FM_Synth {...props} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
-          <Route exact path='/AMSynth' render={props => (<AM_Synth {...props} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
-          <Route exact path='/DuoSynth' render={props => (<Duo_Synth {...props} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
-          <Route exact path='/login' render={props => (<LoginForm {...props} changeHandler={this.handleChange} submitHandler={this.handleSubmit}/>)}/>
+          <div className="app-main">
+            <Navbar user={this.state.user} handleLogin={this.handleLogin} loginDropDown={this.state.loginDropDown} />
+            <Route exact path='/' render={props => (<Synth {...props} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
+            <Route exact path='/FMSynth' render={props => (<FM_Synth {...props} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
+            <Route exact path='/AMSynth' render={props => (<AM_Synth {...props} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
+            <Route exact path='/DuoSynth' render={props => (<Duo_Synth {...props} user={this.state.user} presets={this.state.presets} addLastPreset={this.addLastPreset}/>)}/>
+            <Route exact path='/login' render={props => (<LoginForm {...props} changeHandler={this.handleChange} submitHandler={this.handleSubmit}/>)}/>
+          </div>
         </div>
       </Router>
     )
