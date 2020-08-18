@@ -1,7 +1,8 @@
 import React from 'react';
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
-import GainSlider from '../Components/Gain_Slider'
+import GainSlider from '../components/GainSlider'
+
 gsap.registerPlugin(Draggable);
 export default class Effects extends React.Component{
 
@@ -30,6 +31,9 @@ export default class Effects extends React.Component{
     }
 
 
+
+
+
     render(){
 
             const drag = Draggable.create(".box", {type:"x,y", edgeResistance:0.65, bounds:"#container", inertia:true});
@@ -37,9 +41,6 @@ export default class Effects extends React.Component{
         return(
 
             <div className="effects-style">
-               <div>
-               {drag}
-               </div>
                 <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
                 <div>
                     <h3>Reverb</h3>

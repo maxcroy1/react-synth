@@ -101,6 +101,11 @@ circle#Oval{
   transform: rotate(50deg);
 }
 
+.donut{
+  color: green;
+  margin: 0 auto;
+  position: absolute;
+}
 
 
 
