@@ -135,7 +135,7 @@ export default class Synth extends React.Component {
         let note = key.replace('sh', '#')
         this.synth.triggerAttackRelease(`${note}`)
         let svg = document.getElementById(`${key}`)
-        svg.setAttribute("fill", "skyblue")
+        svg.setAttribute("fill", "tomato")
       }
     }
   }
