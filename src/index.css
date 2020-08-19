@@ -27,8 +27,10 @@ code {
 }
 
 .keyboard-container {
+  width: 80%;
+  margin: 0 auto;
 }
-
+  
 svg{
   width: 80%;
 }
@@ -64,8 +66,10 @@ img{
 
 .left-nav:hover{
   width: 25%;
-  text-decoration:underline;
+/*  text-decoration:underline;*/
 }
+
+
 
 .center-nav{
   width: 25%;
@@ -115,17 +119,19 @@ circle#Oval{
 .slide-container1 {
   height: 200px;
   width: 70%;
-  padding-bottom: 20px;
+
   float: left;
   text-align: left;
-  margin-left: 8%
+  margin-left: 8%;
+  padding: 10px;
+
 }
 
 .slider {
   -webkit-appearance: none;  
   appearance: none;
   width: 60%; 
-  height: 6px; 
+  height: 2px; 
   background: black; 
   border: .2px solid #1A1A1A;
   outline: none; 
@@ -151,9 +157,16 @@ circle#Oval{
   background: #F8F8F8; 
   border: 2px solid #979797;
   cursor: pointer; 
-    -webkit-box-shadow: 3px 3px 5px 0px black;  
-  -moz-box-shadow:    3px 3px 5px 0px black;  
-  box-shadow:         3px 3px 5px 0px black;  
+box-shadow: -1px 2px 2px rgba(0, 0, 0, 0.4), inset -10px 4px 10px 2px rgba(0, 0, 0, 0.05), 0px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.05), -1px 2px 2px rgba(0, 0, 0, 0.04167), -2px 3px 2px rgba(0, 0, 0, 0.03333), -3px 4px 2px rgba(0, 0, 0, 0.025), -4px 5px 2px rgba(0, 0, 0, 0.01667), -5px 6px 2px rgba(0, 0, 0, 0.00833), -6px 7px 2px transparent;
+
+
+     
+    background: linear-gradient(#ddd, #bbb);
+    border-radius: 2px;
+    border: 1px solid #bbb;
+    border-top: 1px solid #eee;
+    border-bottom: 5px solid #777;
+
 
 }
 
@@ -211,7 +224,7 @@ circle#Oval{
 .slide-label{
   color: grey;
   padding: 8%;
-  
+text-transform: uppercase;
   text-align: left;
 
 }

@@ -11,10 +11,10 @@ export default class Navbar extends React.Component{
             <div className="nav-container">
                 <div className="inner-nav">
                     <div className="left-nav">
-                        <NavLink to='/' exact className={"inner-left"}>Synth</NavLink>
-                        <NavLink to='/AMSynth' exact className={"inner-left"}>AMSynth</NavLink>
-                        <NavLink to='/FMSynth' exact className={"inner-left"}>FMSynth</NavLink>
-                        <NavLink to='/DuoSynth' exact className={"inner-left"}>DuoSynth</NavLink>
+                        <NavLink to='/' exact className={"inner-left"} activeStyle={{borderBottom: 'solid 2px #000'}}>Synth</NavLink>
+                        <NavLink to='/AMSynth' exact className={"inner-left"} activeStyle={{borderBottom: 'solid 2px #000'}}>AMSynth</NavLink>
+                        <NavLink to='/FMSynth' exact className={"inner-left"}activeStyle={{borderBottom: 'solid 2px #000'}}>FMSynth</NavLink>
+                        <NavLink to='/DuoSynth' exact className={"inner-left"}activeStyle={{borderBottom: 'solid 2px #000'}}>DuoSynth</NavLink>
                     </div>
                     <div className="center-nav">
                         <img src={Logo} className={"logo-image "}/>
