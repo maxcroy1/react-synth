@@ -68,7 +68,7 @@ export default class Effects extends React.Component{
                 </div>
                 <div className="slide-container2">
                     <div>
-                         <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
+                         <button className="single-button" onClick={() => this.handlePreset(this.props)}></button>
                     </div>
                 </div>
             </div>

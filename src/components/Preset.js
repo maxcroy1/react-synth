@@ -4,7 +4,7 @@ export default class Preset extends React.Component {
     render(){
         return(
             <div>
-                <button onClick={() => this.props.applyPreset(this.props.preset)}>Preset {this.props.preset.id}</button>
+                <button className="preset-button"onClick={() => this.props.applyPreset(this.props.preset)}>Preset {this.props.preset.id}</button>
             </div>
         )
     }
