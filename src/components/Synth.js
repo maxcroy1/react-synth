@@ -162,12 +162,9 @@ export default class Synth extends React.Component {
   }
 
   componentDidMount() {
-      const self = this;
-
-      this.synth.chain(this.reverb, this.gain, this.bitCrusher, this.chebyshev)
-
-      document.addEventListener('keydown', this.playKey)
-      document.addEventListener('keyup', this.endKey)
+    this.synth.chain(this.reverb, this.gain, this.bitCrusher, this.chebyshev)
+    document.addEventListener('keydown', this.playKey)
+    document.addEventListener('keyup', this.endKey)
   }
 
   componentWillUnmount() {
