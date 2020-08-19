@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.1.2",
     "gsap": "^3.5.0",
     "jquery-knob": "^1.2.11",
+    "jquery-knob-chif": "^1.2.13",
+    "knob": "^1.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

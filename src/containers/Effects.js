@@ -35,31 +35,36 @@ export default class Effects extends React.Component{
 
 
 
+
     render(){
+
+
         const drag = Draggable.create(".box", {type:"x,y", edgeResistance:0.65, bounds:"#container", inertia:true});
         return(
-            
-            <div className="slideContainer">
-                <div>
-                    <label>Wet</label>
-                    <input type="range" min="0" max="1" step="0.1" value={this.props.reverb.wet} className="slider" id="reverbWet" onChange={this.props.wetSlider}></input>
+            <div>
+                <div className="slide-container1">
+                    <div>
+                        <label className="slide-label">Wet</label>
+                        <input type="range" min="0" max="1" step="0.1" value={this.props.reverb.wet} className="slider" id="reverbWet" onChange={this.props.wetSlider}></input>
+                    </div>
+                    <div>
+                        <label className="slide-label">Decay</label>
+                        <input type="range" min="0.1" max="10" step="0.1" value={this.props.reverb.decay} className="slider" id="reverbDecay" onChange={this.props.decaySlider}></input>
+                    </div>
+                    <div>
+                    </div>
+                    <div>
+                        <label className="slide-label">BitCrusher</label>
+                        <input type="range" min="-16" max="-4" step="1" value={this.props.bitCrush} className="slider" id="BitCrusher" onChange={this.props.bcSlider}></input>
+                        <label className="slide-label">Chebyshev</label>
+                        <input type="range" min="1" max="100" step="1" value={this.props.chebyshev} className="slider" id="Chebyshev" onChange={this.props.chebySlider}></input>
+                    </div>
+                    <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
                 </div>
-                <div>
-                    <label>Decay</label>
-                    <input type="range" min="0.1" max="10" step="0.1" value={this.props.reverb.decay} className="slider" id="reverbDecay" onChange={this.props.decaySlider}></input>
+                <div className="slide-container2">
+                    <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="speaker1 slider" id="Gain" onChange={this.props.gainSlider}></input>
+                    <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="speaker1 slider" id="Gain" onChange={this.props.gainSlider}></input>
                 </div>
-                <div>
-                    <label>Gain </label>
-                    <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="slider" id="Gain" onChange={this.props.gainSlider}></input>
-                </div>
-                <div>
-                    <label>BitCrusher</label>
-                    <input type="range" min="-16" max="-4" step="1" value={this.props.bitCrush} className="slider" id="BitCrusher" onChange={this.props.bcSlider}></input>
-                    <label>Chebyshev</label>
-                    <input type="range" min="1" max="100" step="1" value={this.props.chebyshev} className="slider" id="Chebyshev" onChange={this.props.chebySlider}></input>
-                </div>
-                <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
-
             </div>
         )
     }
