@@ -153,7 +153,7 @@ export default class AM_Synth extends React.Component {
       if ((svg.id).includes('sh')) {
         svg.setAttribute("fill", "black")
       } else {
-        svg.setAttribute("fill", "EEEEEE")
+        svg.setAttribute("fill", "white")
       }
     } else if(Object.values(this.state.keymappings).includes(key)){
       this.synth.triggerRelease()
@@ -161,7 +161,7 @@ export default class AM_Synth extends React.Component {
       if ((svg.id).includes('sh')) {
         svg.setAttribute("fill", "black")
       } else {
-        svg.setAttribute("fill", "EEEEEE")
+        svg.setAttribute("fill", "white")
       }
     }
   }
