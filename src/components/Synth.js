@@ -106,12 +106,12 @@ export default class Synth extends React.Component {
   applyPreset = (preset) => {
     this.setState({
       reverbSettings: {
-        wet: preset.reverbSettings.wet,
-        decay: preset.reverbSettings.decay
+        wet: preset.reverb_wet,
+        decay: preset.reverb_decay
       },
-      gainSetting: preset.gainSetting,
-      bcSetting: preset.bcSetting,
-      chebySetting: preset.chebySetting
+      gainSetting: preset.gain,
+      bcSetting: preset.bitcrush,
+      chebySetting: preset.cheby
     })
   }
 
@@ -177,8 +177,8 @@ export default class Synth extends React.Component {
       this.applySettings()
       return (
           <div>
-            {this.props.presets.map(preset => <Preset preset={preset} applyPreset={this.applyPreset}/>)}
             <Effects wetSlider={this.wetSlider} gainSlider={this.gainSlider} gain={this.state.gainSetting} reverb={this.state.reverbSettings} bitCrush={this.state.bcSetting} decaySlider={this.decaySlider} user={this.props.user} addLastPreset={this.props.addLastPreset} bcSlider={this.bitCrusherSlider} chebyshev={this.state.chebySetting} chebySlider={this.chebySlider}/>
+            {this.props.presets.map(preset => <Preset preset={preset} applyPreset={this.applyPreset}/>)}
             <Keyboard playKey={this.playKey} endKey={this.endKey}/>
           </div>
       )

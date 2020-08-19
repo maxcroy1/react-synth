@@ -13,21 +13,25 @@ export default class Effects extends React.Component{
             synth_settings_attributes: {
                 gain: props.gain,
                 reverb_wet: props.reverb.wet,
-                reverb_decay: props.reverb.decay
+                reverb_decay: props.reverb.decay,
+                bitcrush: props.bitCrush,
+                cheby: props.chebyshev
             }
         }
-        console.log(formData)
         let configObj = {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json" 
             },
             body: JSON.stringify(formData)
         }
         fetch("http://localhost:3000/api/v1/users/" + this.props.user, configObj)
             .then(resp => resp.json())
-            .then(json => this.props.addLastPreset(json.synth_setting))
+            .then(json => {
+                console.log(json.synth_setting)
+                this.props.addLastPreset(json.synth_setting)
+            })
             .catch(error => console.log(error))
     }
 
