@@ -107,12 +107,12 @@ export default class FM_Synth extends React.Component {
   applyPreset = (preset) => {
     this.setState({
       reverbSettings: {
-        wet: preset.reverbSettings.wet,
-        decay: preset.reverbSettings.decay
+        wet: preset.reverb_wet,
+        decay: preset.reverb_decay
       },
-      gainSetting: preset.gainSetting,
-      bcSetting: preset.bcSetting,
-      chebySetting: preset.chebySetting
+      gainSetting: preset.gain,
+      bcSetting: preset.bitcrush,
+      chebySetting: preset.cheby
     })
   }
 

@@ -41,7 +41,7 @@ export default class AM_Synth extends React.Component {
     // Effects Callbacks
     this.wetSlider = this.wetSlider.bind(this);
     this.decaySlider = this.decaySlider.bind(this);
-    this.gainSlider = this.decaySlider.bind(this);
+    this.gainSlider = this.gainSlider.bind(this);
     this.bitCrusherSlider = this.bitCrusherSlider.bind(this);
     this.chebySlider = this.chebySlider.bind(this);
 
@@ -106,12 +106,12 @@ export default class AM_Synth extends React.Component {
   applyPreset = (preset) => {
     this.setState({
       reverbSettings: {
-        wet: preset.reverbSettings.wet,
-        decay: preset.reverbSettings.decay
+        wet: preset.reverb_wet,
+        decay: preset.reverb_decay
       },
-      gainSetting: preset.gainSetting,
-      bcSetting: preset.bcSetting,
-      chebySetting: preset.chebySetting
+      gainSetting: preset.gain,
+      bcSetting: preset.bitcrush,
+      chebySetting: preset.cheby
     })
   }
 

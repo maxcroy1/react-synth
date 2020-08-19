@@ -41,7 +41,7 @@ export default class Synth extends React.Component {
     // Effects Callbacks
     this.wetSlider = this.wetSlider.bind(this);
     this.decaySlider = this.decaySlider.bind(this);
-    this.gainSlider = this.decaySlider.bind(this);
+    this.gainSlider = this.gainSlider.bind(this);
     this.bitCrusherSlider = this.bitCrusherSlider.bind(this);
     this.chebySlider = this.chebySlider.bind(this);
 

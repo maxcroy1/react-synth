@@ -1,8 +1,6 @@
 import React from 'react';
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
-import GainSlider from '../components/GainSlider'
-import { Distortion } from 'tone';
 
 gsap.registerPlugin(Draggable);
 export default class Effects extends React.Component{
