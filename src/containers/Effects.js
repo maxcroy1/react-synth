@@ -36,9 +36,7 @@ export default class Effects extends React.Component{
 
 
     render(){
-
-            const drag = Draggable.create(".box", {type:"x,y", edgeResistance:0.65, bounds:"#container", inertia:true});
-
+        const drag = Draggable.create(".box", {type:"x,y", edgeResistance:0.65, bounds:"#container", inertia:true});
         return(
             
             <div className="slideContainer">
