@@ -43,8 +43,12 @@ export default class Effects extends React.Component{
 
         const drag = Draggable.create(".box", {type:"x,y", edgeResistance:0.65, bounds:"#container", inertia:true});
         return(
-            <div>
+            <div className="effects-container">
                 <div className="slide-container1">
+                    <div>
+                    <label className="slide-label">Gain</label>
+                    <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="slider" id="Gain" onChange={this.props.gainSlider}></input>
+                    </div>
                     <div>
                         <label className="slide-label">Wet</label>
                         <input type="range" min="0" max="1" step="0.1" value={this.props.reverb.wet} className="slider" id="reverbWet" onChange={this.props.wetSlider}></input>
@@ -61,11 +65,11 @@ export default class Effects extends React.Component{
                         <label className="slide-label">Chebyshev</label>
                         <input type="range" min="1" max="100" step="1" value={this.props.chebyshev} className="slider" id="Chebyshev" onChange={this.props.chebySlider}></input>
                     </div>
-                    <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
                 </div>
                 <div className="slide-container2">
-                    <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="speaker1 slider" id="Gain" onChange={this.props.gainSlider}></input>
-                    <input type="range" min="0" max="1" step="0.1" value={this.props.gain} className="speaker1 slider" id="Gain" onChange={this.props.gainSlider}></input>
+                    <div>
+                         <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
+                    </div>
                 </div>
             </div>
         )

@@ -116,8 +116,9 @@ circle#Oval{
   height: 200px;
   width: 70%;
   padding-bottom: 20px;
-  text-align:center;
   float: left;
+  text-align: left;
+  margin-left: 8%
 }
 
 .slider {
@@ -129,7 +130,7 @@ circle#Oval{
   border: .2px solid #1A1A1A;
   outline: none; 
   opacity: 0.7; 
-  -webkit-transition: .2s; 
+  -webkit-transition: 2s; 
   transition: opacity .2s;
   transform: rotate();
   margin-bottom: 30px;
@@ -187,7 +188,7 @@ circle#Oval{
   appearance: none;
   width: 20px; 
   height: 25px; 
-  background: grey; 
+  background: #D8D8D8; 
   cursor: pointer; 
     -webkit-box-shadow: 3px 3px 5px 0px black;  
   -moz-box-shadow:    3px 3px 5px 0px black;  
@@ -210,11 +211,14 @@ circle#Oval{
 .slide-label{
   color: grey;
   padding: 8%;
-  text-decoration: 
+  
+  text-align: left;
+
 }
 
 .slide-container2{
-  background-color: red;
+  width: 20%;
+  float: left;
 }
 
 
@@ -232,4 +236,8 @@ circle#Oval{
 
   transform: rotate(270deg);
   align-items: left;
+}
+
+.effects-container{
+  margin-top: 5%;
 }
