@@ -10,59 +10,59 @@
             <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-3" x="74" y="0" width="49" height="250"></rect>
-        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-4">
+        <rect id="path-3" x="74" y="0" width="49" height="249"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.9%" filterUnits="objectBoundingBox" id="filter-4">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-5" x="171" y="0" width="49" height="250"></rect>
-        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-6">
+        <rect id="path-5" x="171" y="0" width="49" height="249"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.9%" filterUnits="objectBoundingBox" id="filter-6">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-7" x="370" y="0" width="49" height="250"></rect>
-        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-8">
+        <rect id="path-7" x="370" y="0" width="49" height="249"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.9%" filterUnits="objectBoundingBox" id="filter-8">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-9" x="471" y="0" width="49" height="250"></rect>
-        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-10">
+        <rect id="path-9" x="471" y="0" width="49" height="249"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.9%" filterUnits="objectBoundingBox" id="filter-10">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-11" x="571" y="0" width="49" height="250"></rect>
-        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-12">
+        <rect id="path-11" x="571" y="0" width="49" height="249"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.9%" filterUnits="objectBoundingBox" id="filter-12">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-13" x="770" y="0" width="49" height="250"></rect>
-        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-14">
+        <rect id="path-13" x="770" y="0" width="49" height="249"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.9%" filterUnits="objectBoundingBox" id="filter-14">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-15" x="867" y="0" width="49" height="250"></rect>
-        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.8%" filterUnits="objectBoundingBox" id="filter-16">
+        <rect id="path-15" x="867" y="0" width="49" height="249"></rect>
+        <filter x="-32.7%" y="-5.6%" width="165.3%" height="112.9%" filterUnits="objectBoundingBox" id="filter-16">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD" transform="translate(-147.000000, -468.000000)">
-            <g id="Untitled-8" transform="translate(174.000000, 476.000000)">
+        <g id="Desktop-HD" transform="translate(-88.000000, -451.000000)">
+            <g id="Untitled-8" transform="translate(115.000000, 459.000000)">
                 <g id="Rectangle">
                     <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
                     <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
                 </g>
                 <rect id="C4" fill="#EEEEEE" fill-rule="nonzero" x="0" y="2" width="98" height="430"></rect>
-                <rect id="A4" fill="#EEEEEE" fill-rule="nonzero" x="496" y="2" width="98" height="430"></rect>
                 <rect id="D4" fill="#EEEEEE" fill-rule="nonzero" x="99" y="2" width="98" height="430"></rect>
+                <rect id="A4" fill="#EEEEEE" fill-rule="nonzero" x="496" y="2" width="98" height="430"></rect>
                 <rect id="B4" fill="#EEEEEE" fill-rule="nonzero" x="595" y="2" width="98" height="430"></rect>
                 <rect id="E4" fill="#EEEEEE" fill-rule="nonzero" x="198" y="2" width="98" height="430"></rect>
                 <rect id="C5" fill="#EEEEEE" fill-rule="nonzero" x="694" y="2" width="98" height="430"></rect>
@@ -71,34 +71,34 @@
                 <rect id="G4" fill="#EEEEEE" fill-rule="nonzero" x="397" y="2" width="98" height="430"></rect>
                 <rect id="E5" fill="#EEEEEE" fill-rule="nonzero" x="893" y="2" width="98" height="430"></rect>
                 <rect id="F5" fill="#EEEEEE" fill-rule="nonzero" x="992" y="2" width="98" height="430"></rect>
-                <g id="Csh4" fill-rule="nonzero">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
-                    <use fill="#000000" xlink:href="#path-3"></use>
+                <g id="shadow" fill="black" fill-opacity="1">
+                    <use filter="url(#filter-4)" xlink:href="#path-3"></use>
                 </g>
-                <g id="Dsh4" fill-rule="nonzero">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
-                    <use fill="#000000" xlink:href="#path-5"></use>
+                <g id="shadow" fill="black" fill-opacity="1">
+                    <use filter="url(#filter-6)" xlink:href="#path-5"></use>
                 </g>
-                <g id="Fsh4" fill-rule="nonzero">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
-                    <use fill="#000000" xlink:href="#path-7"></use>
+                <g id="shadow" fill="black" fill-opacity="1">
+                    <use filter="url(#filter-8)" xlink:href="#path-7"></use>
                 </g>
-                <g id="Gsh4" fill-rule="nonzero">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
-                    <use fill="#000000" xlink:href="#path-9"></use>
+                <g id="shadow" fill="black" fill-opacity="1">
+                    <use filter="url(#filter-10)" xlink:href="#path-9"></use>
                 </g>
-                <g id="Ash4" fill-rule="nonzero">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
-                    <use fill="#000000" xlink:href="#path-11"></use>
+                <g id="shadow" fill="black" fill-opacity="1">
+                    <use filter="url(#filter-12)" xlink:href="#path-11"></use>
                 </g>
-                <g id="Csh5" fill-rule="nonzero">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-14)" xlink:href="#path-13"></use>
-                    <use fill="#000000" xlink:href="#path-13"></use>
+                <g id="shadow" fill="black" fill-opacity="1">
+                    <use filter="url(#filter-14)" xlink:href="#path-13"></use>
                 </g>
-                <g id="Dsh5" fill-rule="nonzero">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-16)" xlink:href="#path-15"></use>
-                    <use fill="#000000" xlink:href="#path-15"></use>
+                <g id="shadow" fill="black" fill-opacity="1">
+                    <use filter="url(#filter-16)" xlink:href="#path-15"></use>
                 </g>
+                <rect id="Csh4" fill="#000000" fill-rule="nonzero" x="74" y="1" width="49" height="250"></rect>
+                <rect id="Dsh4" fill="#000000" fill-rule="nonzero" x="171" y="1" width="49" height="250"></rect>
+                <rect id="Fsh4" fill="#000000" fill-rule="nonzero" x="370" y="1" width="49" height="250"></rect>
+                <rect id="Gsh4" fill="#000000" fill-rule="nonzero" x="471" y="1" width="49" height="250"></rect>
+                <rect id="Ash4" fill="#000000" fill-rule="nonzero" x="571" y="1" width="49" height="250"></rect>
+                <rect id="Csh5" fill="#000000" fill-rule="nonzero" x="770" y="1" width="49" height="250"></rect>
+                <rect id="Dsh5" fill="#000000" fill-rule="nonzero" x="867" y="1" width="49" height="250"></rect>
             </g>
         </g>
     </g>

@@ -85,7 +85,7 @@ img{
 
 }
 
-/*app background color*/
+
 .app-main{
 }
 
@@ -121,82 +121,84 @@ circle#Oval{
 }
 
 .slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;  
   appearance: none;
-  width: 60%; /* Full-width */
-  height: 2px; /* Specified height */
-  background: black; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  width: 60%; 
+  height: 6px; 
+  background: black; 
+  border: .2px solid #1A1A1A;
+  outline: none; 
+  opacity: 0.7; 
+  -webkit-transition: .2s; 
   transition: opacity .2s;
   transform: rotate();
   margin-bottom: 30px;
 }
 
-/* Mouse-over effects */
+
 .slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
+  opacity: 1; 
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none; 
   appearance: none;
-  width: 20px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: grey; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-    -webkit-box-shadow: 3px 3px 5px 0px black;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    3px 3px 5px 0px black;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         3px 3px 5px 0px black;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  width: 16px; 
+  height: 25px; 
+  background: #F8F8F8; 
+  border: 2px solid #979797;
+  cursor: pointer; 
+    -webkit-box-shadow: 3px 3px 5px 0px black;  
+  -moz-box-shadow:    3px 3px 5px 0px black;  
+  box-shadow:         3px 3px 5px 0px black;  
 
 }
 
 .slider::-moz-range-thumb {
-  width: 40px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: grey; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 40px; 
+  height: 25px; 
+  background: #D8D8D8; 
+  cursor: pointer; 
   float: right
 }
 
 .slider-gain {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;  
   appearance: none;
-  width: 10%; /* Full-width */
-  height: 2px; /* Specified height */
-  background: black; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  width: 10%; 
+  height: 2px; 
+  background: black; 
+  outline: none; 
+  opacity: 0.7; 
+  -webkit-transition: .2s; 
   transition: opacity .2s;
 
 }
-/* Mouse-over effects */
+
 .slider-gain:hover {
-  opacity: 1; /* Fully shown on mouse-over */
+  opacity: 1; 
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+
 .slider-gain::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none; 
   appearance: none;
-  width: 20px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: grey; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-    -webkit-box-shadow: 3px 3px 5px 0px black;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    3px 3px 5px 0px black;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         3px 3px 5px 0px black;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  width: 20px; 
+  height: 25px; 
+  background: grey; 
+  cursor: pointer; 
+    -webkit-box-shadow: 3px 3px 5px 0px black;  
+  -moz-box-shadow:    3px 3px 5px 0px black;  
+  box-shadow:         3px 3px 5px 0px black;  
 
 }
 
 .slider-gain::-moz-range-thumb {
-  width: 40px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: grey; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 40px; 
+  height: 25px; 
+  background: grey; 
+  cursor: pointer; 
 }
 
 .slide-container{
