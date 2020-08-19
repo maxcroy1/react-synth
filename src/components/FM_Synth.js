@@ -135,9 +135,8 @@ export default class FM_Synth extends React.Component {
       } else if(Object.values(this.state.keymappings).includes(key)){
         let note = key.replace('sh', '#')
         this.synth.triggerAttackRelease(`${note}`)
-        this.setState({note: this.state.keymappings[key]})
-        let svg = document.getElementById(`${this.state.note}`)
-        svg.setAttribute("fill", "skyblue")
+        let svg = document.getElementById(`${key}`)
+        svg.setAttribute("fill", "tomato")
       }
     }
   }
@@ -159,6 +158,12 @@ export default class FM_Synth extends React.Component {
       }
     } else if(Object.values(this.state.keymappings).includes(key)){
       this.synth.triggerRelease()
+      let svg = document.getElementById(`${key}`)
+      if ((svg.id).includes('sh')) {
+        svg.setAttribute("fill", "black")
+      } else {
+        svg.setAttribute("fill", "white")
+      }
     }
   }
 
