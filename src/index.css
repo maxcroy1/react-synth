@@ -112,12 +112,12 @@ circle#Oval{
   position: absolute;
 }
 
-.slidecontainer {
+.slide-container1 {
   height: 200px;
-  width: 20%;
-  padding: 20px;
+  width: 70%;
+  padding-bottom: 20px;
   text-align:center;
-  margin: 0 auto;
+  float: left;
 }
 
 .slider {
@@ -133,6 +133,7 @@ circle#Oval{
   transition: opacity .2s;
   transform: rotate();
   margin-bottom: 30px;
+
 }
 
 
@@ -201,28 +202,34 @@ circle#Oval{
   cursor: pointer; 
 }
 
-.slide-container{
+.slide-container1{
   display: ƒlex;
 }
 
 
-label{
+.slide-label{
   color: grey;
   padding: 8%;
+  text-decoration: 
 }
 
-.slidecontainerleft{
-  background-color: green;
-  text-align: center;
-  float:left;
-  margin: auto;
-  width: 300px;
-  transform: rotate(270deg);
-
+.slide-container2{
+  background-color: red;
 }
+
 
 .all-slides-container{
   width: 100%;
   float: left;
   margin: auto;
+}
+
+.speaker1{
+  float: left;
+  
+  margin-top: 8%;
+  width: 200px;
+
+  transform: rotate(270deg);
+  align-items: left;
 }
