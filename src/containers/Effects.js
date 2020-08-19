@@ -13,21 +13,25 @@ export default class Effects extends React.Component{
             synth_settings_attributes: {
                 gain: props.gain,
                 reverb_wet: props.reverb.wet,
-                reverb_decay: props.reverb.decay
+                reverb_decay: props.reverb.decay,
+                bitcrush: props.bitCrush,
+                cheby: props.chebyshev
             }
         }
-        console.log(formData)
         let configObj = {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json" 
             },
             body: JSON.stringify(formData)
         }
         fetch("http://localhost:3000/api/v1/users/" + this.props.user, configObj)
             .then(resp => resp.json())
-            .then(json => this.props.addLastPreset(json.synth_setting))
+            .then(json => {
+                console.log(json.synth_setting)
+                this.props.addLastPreset(json.synth_setting)
+            })
             .catch(error => console.log(error))
     }
 
@@ -38,7 +42,6 @@ export default class Effects extends React.Component{
     render(){
         const drag = Draggable.create(".box", {type:"x,y", edgeResistance:0.65, bounds:"#container", inertia:true});
         return(
-            
             <div className="slideContainer">
                 <div>
                     <label>Wet</label>
@@ -58,7 +61,7 @@ export default class Effects extends React.Component{
                     <label>Chebyshev</label>
                     <input type="range" min="1" max="100" step="1" value={this.props.chebyshev} className="slider" id="Chebyshev" onChange={this.props.chebySlider}></input>
                 </div>
-                <button onClick={() => this.handlePreset(this.props)}>Save Preset</button>
+                <button id="button" onClick={() => this.handlePreset(this.props)}>Save Preset</button>
 
             </div>
         )
