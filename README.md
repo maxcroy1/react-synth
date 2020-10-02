@@ -6,7 +6,7 @@ Back end is [here](https://github.com/maxcroy1/react-synth-backend.git)
 ## Overview 
 
 Synthesizer that utilizes Tone.js to allow users to create and save sound presets 
-Watch a demo [here](https://youtu.be/kDDZ7Tb6lQM)
+Watch a demo [here](https://vimeo.com/458211076)
 
 ## Functionality 
 - 4 Synthesizers
